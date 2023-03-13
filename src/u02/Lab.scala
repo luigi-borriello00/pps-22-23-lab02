@@ -35,11 +35,17 @@ object Lab extends App:
   def compose(f : Int => Int, g : Int => Int) : Int => Int
   = n => f(g(n))
 
-  def genericCompose[T] (f : T => T, g : T => T) : T => T
+  def genericCompose[A, B, C] (f : B => C, g : A => B) : A => C
   = n => f(g(n))
 
   val f: Int => Int = x => x + 1
   val g: Int => Int = x => x + 2
   println(genericCompose(f, g) (5))
+
+
+
+  def gcd(a: Int, b: Int) : Int = (a, b) match
+    case (_, b) if b == 0 => a
+    case _ => gcd(b, a%b)
 
 
