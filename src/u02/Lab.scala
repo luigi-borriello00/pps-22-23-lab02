@@ -32,4 +32,14 @@ object Lab extends App:
   println(p3(1)(1)(1))
   println(p4(1,1,1))
 
+  def compose(f : Int => Int, g : Int => Int) : Int => Int
+  = n => f(g(n))
+
+  def genericCompose[T] (f : T => T, g : T => T) : T => T
+  = n => f(g(n))
+
+  val f: Int => Int = x => x + 1
+  val g: Int => Int = x => x + 2
+  println(genericCompose(f, g) (5))
+
 
