@@ -1,5 +1,5 @@
 package u02
-/*
+
 object Optionals extends App:
 
   enum Option[A]:
@@ -20,6 +20,11 @@ object Optionals extends App:
       case Some(a) => f(a)
       case _ => None()
 
+    def filter[A](opt: Option[A], pred: (A => Boolean)): Option[A] = opt match
+      case Some(a) if pred(a) => Some(a)
+      case _ => None()
+
+
   import Option.*
 
   val s1: Option[Int] = Some(1)
@@ -32,6 +37,3 @@ object Optionals extends App:
   println(flatMap(s1)(i => Some(i + 1))) // Some(2)
   println(flatMap(s1)(i => flatMap(s2)(j => Some(i + j)))) // Some(3)
   println(flatMap(s1)(i => flatMap(s3)(j => Some(i + j)))) // None
-
-
-*/

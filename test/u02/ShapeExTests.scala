@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Assertions.*
 import u02.Lab03.Shape
 import u02.ProductTypes.Point2D
 
-class LabTest {
+class ShapeExTests {
+  
   val circleRadius = 10
   val squareSide = 10
   val rectHeight = 10
@@ -14,6 +15,7 @@ class LabTest {
   val rectangle: Shape = Shape.Rectangle(rectHeight, rectWidth)
   val circle: Shape = Shape.Circle(circleRadius)
   val square: Shape = Shape.Square(squareSide)
+
 
   @Test def testPerimeter() =
     assertEquals(rectWidth * 2 + rectHeight * 2, Shape.perimeter(rectangle))
