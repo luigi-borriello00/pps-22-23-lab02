@@ -48,4 +48,14 @@ object Lab extends App:
     case (_, b) if b == 0 => a
     case _ => gcd(b, a%b)
 
+  enum Shape:
+    case Rectangle(height : Double, width : Double)
+    case Circle(radius : Double)
+    case Square(side : Double)
+/*
+  object Shape:
+    def perimeter(shape: Shape) : Double = s match
+      case Shape.Rectangle(h, w) => (h * 2) + (w * 2)
 
+
+*/
