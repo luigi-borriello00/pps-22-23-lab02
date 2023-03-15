@@ -77,6 +77,8 @@ object Lab03 extends App {
       case Rectangle(h, w) => (h * 2) + (w * 2)
       case Circle(r) => 2 * r * Math.PI
       case Square(s) => s * 4
-    def contains(shape: Shape, point: Point2D): Boolean =
-      0 == 0
+    def contains(shape: Shape, point: Point2D): Boolean = shape match
+      case Rectangle(h, w) => Math.abs(point.x) <= w/2 && Math.abs(point.y) <= h/2
+      case Circle(r) => Math.abs(point.x) <= r && Math.abs(point.y) <= r
+      case Square(s) => Math.abs(point.x) <= s/2 && Math.abs(point.y) <= s/2
 }

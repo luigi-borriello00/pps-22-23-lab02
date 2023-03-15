@@ -26,4 +26,14 @@ class LabTest {
     assertTrue(Shape.contains(circle, p))
     assertTrue(Shape.contains(square, p))
 
+    val p2 = Point2D(100, 100)
+    assertFalse(Shape.contains(rectangle, p2))
+    assertFalse(Shape.contains(circle, p2))
+    assertFalse(Shape.contains(square, p2))
+    // edge cases
+    assertFalse(Shape.contains(rectangle, Point2D(0, 10)))
+    assertTrue(Shape.contains(rectangle, Point2D(10, 0)))
+    assertFalse(Shape.contains(circle, Point2D(11, 0)))
+    assertFalse(Shape.contains(square, Point2D(11, 0)))
+
 }
