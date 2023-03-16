@@ -7,7 +7,6 @@ import Lab03.Option.*
 class OptionalsTests:
 
   val opt = Some(5)
-  println(opt)
 
   @Test def testFilter() =
     assertEquals(None(), filter(opt)(_ > 6))
