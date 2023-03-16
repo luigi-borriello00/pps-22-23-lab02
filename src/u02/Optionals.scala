@@ -20,18 +20,7 @@ object Optionals extends App:
       case Some(a) => f(a)
       case _ => None()
 
-    def filter[A](opt: Option[A])(pred: (A => Boolean)): Option[A] = opt match
-      case Some(a) if pred(a) => Some(a)
-      case _ => None()
-
-    def map[A](opt: Option[A])(pred: (A => Boolean)): Option[Boolean] = opt match
-      case Some(a) if pred(a) => Some(true)
-      case Some(a) if !pred(a) => Some(false)
-      case _ => None()
-
-    def fold[A, B](opt: Option[A])(default: B)(lambda: A => B): B = opt match
-      case Some(a) => lambda(a)
-      case _ => default
+    
 
   import Option.*
 

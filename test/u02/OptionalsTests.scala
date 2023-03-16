@@ -2,7 +2,7 @@ package u02
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
-import Optionals.Option.*
+import Lab03.Option.*
 
 class OptionalsTests:
 
@@ -24,4 +24,3 @@ class OptionalsTests:
   @Test def testFold() =
     assertEquals(6, fold(Some(5))(1)(_ + 1))
     assertEquals(1, fold(None[Int]())(1)(_ + 1))
-    
