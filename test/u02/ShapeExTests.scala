@@ -6,7 +6,7 @@ import u02.Lab03.Shape
 import u02.ProductTypes.Point2D
 
 class ShapeExTests {
-  
+
   val circleRadius = 10
   val squareSide = 10
   val rectHeight = 10
@@ -16,12 +16,12 @@ class ShapeExTests {
   val circle: Shape = Shape.Circle(circleRadius)
   val square: Shape = Shape.Square(squareSide)
 
-
   @Test def testPerimeter() =
     assertEquals(rectWidth * 2 + rectHeight * 2, Shape.perimeter(rectangle))
     assertEquals(circleRadius * 2 * Math.PI, Shape.perimeter(circle))
     assertEquals(squareSide * 4, Shape.perimeter(square))
 
+  // We suppose that the Shape has the origin as center
   @Test def testContains() =
     val p = Point2D(0, 0)
     assertTrue(Shape.contains(rectangle, p))
