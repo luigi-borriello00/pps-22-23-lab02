@@ -21,3 +21,7 @@ class OptionalsTests:
     assertEquals(Some(false), map(Some(5))(_ > 8))
     assertEquals(None(), map(None[Int]())(_ > 2))
 
+  @Test def testFold() =
+    assertEquals(6, fold(Some(5))(1)(_ + 1))
+    assertEquals(1, fold(None[Int]())(1)(_ + 1))
+    

@@ -41,9 +41,7 @@ object Lab03 extends App {
   //4
   val p1: Int => Int => Int => Boolean = x => y => z => x <= y && y == z
   val p2: (Int, Int, Int) => Boolean = (x, y, z) => x <= y && y == z
-
   def p3(x: Int)(y: Int)(z: Int): Boolean = x <= y && y == z
-
   def p4(x: Int, y: Int, z: Int): Boolean = x <= y && y == z
 
   //5
@@ -78,7 +76,7 @@ object Lab03 extends App {
       case Circle(r) => 2 * r * Math.PI
       case Square(s) => s * 4
     def contains(shape: Shape, point: Point2D): Boolean = shape match
-      case Rectangle(h, w) => Math.abs(point.x) <= w/2 && Math.abs(point.y) <= h/2
+      case Rectangle(h, w) => Math.abs(point.x) <= w / 2 && Math.abs(point.y) <= h / 2
       case Circle(r) => Math.abs(point.x) <= r && Math.abs(point.y) <= r
-      case Square(s) => Math.abs(point.x) <= s/2 && Math.abs(point.y) <= s/2
+      case Square(s) => Math.abs(point.x) <= s / 2 && Math.abs(point.y) <= s / 2
 }
