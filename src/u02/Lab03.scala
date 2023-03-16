@@ -70,7 +70,6 @@ object Lab03 extends App {
   val f: Int => Int = x => x + 1
   val g: Int => Int = x => x + 1
 
-
   println("5-Example of compose: " + compose(f, g)(1) + " (should be 3)")
   println("5-Example of genericCompose: " + genericCompose(f, g)(1) + " (should be 3)")
 
@@ -109,9 +108,8 @@ object Lab03 extends App {
       case Some(a) if pred(a) => Some(a)
       case _ => None()
 
-    def map[A](opt: Option[A])(pred: (A => Boolean)): Option[Boolean] = opt match
-      case Some(a) if pred(a) => Some(true)
-      case Some(a) if !pred(a) => Some(false)
+    def map[A, B](opt: Option[A])(m: (A => B)): Option[B] = opt match
+      case Some(a) => Some(m(a))
       case _ => None()
 
     def fold[A, B](opt: Option[A])(default: B)(lambda: A => B): B = opt match
