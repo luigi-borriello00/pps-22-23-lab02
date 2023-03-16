@@ -8,7 +8,7 @@ import scala.annotation.tailrec
 
 object Lab03 extends App {
 
-  //3a
+  //Task 3a
   def isPositive(x: Int): String = x match
     case n if n >= 0 => "positive"
     case _ => "negative"
@@ -23,7 +23,7 @@ object Lab03 extends App {
   println(isPos(1) + " (should be positive)")
   println(isPos(-1) + " (should be negative)")
 
-  //3b
+  //Task 3b
   private def negFun(p: String => Boolean): String => Boolean =
     !p(_)
 
@@ -37,7 +37,7 @@ object Lab03 extends App {
   println("3b-Example of negVal: (should be true)")
   println(notEmpty("foo") && !notEmpty(""))
 
-  //3c
+  //Task 3c
   private def negFunGeneric[A](p: A => Boolean): A => Boolean = !p(_)
 
   private val isNotANumber: Int => Boolean = _ => false
@@ -45,7 +45,7 @@ object Lab03 extends App {
   println("3c-Example of negFunGeneric: (should be true)")
   println(isANumber(5))
 
-  //4
+  //Task 4
   val p1: Int => Int => Int => Boolean = x => y => z => x <= y && y == z
   val p2: (Int, Int, Int) => Boolean = (x, y, z) => x <= y && y == z
 
@@ -59,7 +59,7 @@ object Lab03 extends App {
   println(p3(1)(2)(2))
   println(p4(1, 2, 2))
 
-  //5
+  // Task 5
   // As we want to return a function, we need to define the type of the function
   private def compose(f: Int => Int, g: Int => Int): Int => Int =
     n => f(g(n))
@@ -70,10 +70,11 @@ object Lab03 extends App {
   val f: Int => Int = x => x + 1
   val g: Int => Int = x => x + 1
 
+
   println("5-Example of compose: " + compose(f, g)(1) + " (should be 3)")
   println("5-Example of genericCompose: " + genericCompose(f, g)(1) + " (should be 3)")
 
-  //6
+  // Task 6
   @tailrec
   private def gcd(a: Int, b: Int): Int = b match
     case b if b == 0 => a
@@ -81,7 +82,7 @@ object Lab03 extends App {
 
   println("6-Test GCD of 14 and 7: " + gcd(14, 7) + " (should be 7)")
 
-  //7
+  //Task 7
   enum Shape:
     case Rectangle(h: Double, w: Double)
     case Circle(r: Double)
@@ -98,7 +99,7 @@ object Lab03 extends App {
       case Circle(r) => Math.abs(point.x) <= r && Math.abs(point.y) <= r
       case Square(s) => Math.abs(point.x) <= s / 2 && Math.abs(point.y) <= s / 2
 
-  //8
+  //Task 8
   enum Option[A]:
     case Some(a: A)
     case None() // here parens are needed because of genericity
